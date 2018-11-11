@@ -1,0 +1,29 @@
+extends layout
+
+block content
+
+  script(type="text/javascript").
+    const user = !{JSON.stringify(user)}
+    console.log(user)
+
+  include includes/nav.pug
+
+  h1= title
+  p The Main page
+
+  if(user.provider == "steam")
+    p.
+      provider: #{user.provider} <br>
+      displayName: #{user.displayName} <br>
+      id: #{user.id} <br>
+  else if(user.provider == "local")
+    p.
+      provider: #{user.provider} <br>
+      username: #{user.username} <br>
+      password: #{user.password} <br>
+  else if(user.provider == "facebook")
+    p.
+      provider: #{user.provider} <br>
+      displayName: #{user.displayName} <br>
+      id: #{user.id} <br>
+  

@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  include includes/nav.pug
+  h1= title
+  div
+    form(action='/login', method="post")
+      label(for="login") Login: 
+        input(type="text" name="username" id="login")
+      br
+      label(for="pass") Pass:
+        input(type="password" name="password" id="pass")
+      br
+      input(type="submit" value="Submit")
+
+  div
+    p.
+      Log in by: <a href="/login/steam">steam</a> | 
+      <a href="/login/facebook">facebook</a>
